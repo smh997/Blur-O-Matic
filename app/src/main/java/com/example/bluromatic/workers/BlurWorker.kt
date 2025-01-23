@@ -27,6 +27,7 @@ class BlurWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, 
             applicationContext
         )
         return withContext(Dispatchers.IO) {
+            delay(DELAY_TIME_MILLIS)
             return@withContext try {
                 require(!resourceUri.isNullOrBlank()) {
                     val errorMessage =
@@ -38,7 +39,7 @@ class BlurWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, 
                 val resolver = applicationContext.contentResolver
 
                 // This is an utility function added to emulate slower work.
-                delay(DELAY_TIME_MILLIS)
+
 
                 val picture =
                     BitmapFactory.decodeStream(resolver.openInputStream(Uri.parse(resourceUri)))
