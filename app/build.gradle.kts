@@ -65,9 +65,9 @@ android {
 
 dependencies {
 
-    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
-    implementation("androidx.activity:activity-compose:1.9.3")
-    implementation("androidx.activity:activity-ktx:1.9.3")
+    implementation(platform("androidx.compose:compose-bom:2025.01.00"))
+    implementation("androidx.activity:activity-compose:1.10.0")
+    implementation("androidx.activity:activity-ktx:1.10.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.runtime:runtime")
@@ -81,6 +81,14 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.extra["lifecycle_version"]}")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:${rootProject.extra["lifecycle_version"]}")
     implementation("androidx.work:work-runtime-ktx:2.10.0")
+
+    // Espresso
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    // Junit
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    // Work testing
+    androidTestImplementation("androidx.work:work-testing:2.10.0")
+
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     debugImplementation("androidx.compose.ui:ui-tooling")
 }
